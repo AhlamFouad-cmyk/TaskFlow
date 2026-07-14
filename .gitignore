@@ -1,0 +1,29 @@
+# Environnement virtuel
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Base de données
+db.sqlite3
+
+# Fichiers Django
+*.log
+media/
+
+# VS Code
+.vscode/
+
+# Variables d'environnement
+.env
+
+# Fichiers Python
+*.pyo
+*.pyd
+
+# Migrations compilées
+*.pyc

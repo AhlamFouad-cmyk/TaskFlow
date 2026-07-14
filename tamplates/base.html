@@ -1,0 +1,139 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title %}TaskFlow{% endblock title %}</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- CSS personnalisé -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <!-- ========================= NAVBAR ========================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+          <i class="bi bi-check2-square"></i>
+          TaskFlow
+        </a>
+
+        <button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">
+                <i class="bi bi-house"></i>
+                Accueil
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">
+                <i class="bi bi-info-circle"></i>
+                À propos
+              </a>
+            </li>
+
+            {% if user.is_authenticated %}
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'task_list' %}">
+                <i class="bi bi-list-task"></i>
+                Mes tâches
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'task_create' %}">
+                <i class="bi bi-plus-circle"></i>
+                Nouvelle
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+              >
+                <i class="bi bi-person-circle"></i>
+                {{ user.username }}
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="dropdown-item">
+                      <i class="bi bi-box-arrow-right"></i>
+                      Déconnexion
+                    </button>
+                  </form>
+                </li>
+              </ul>
+            </li>
+
+            {% else %}
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">
+                <i class="bi bi-box-arrow-in-right"></i>
+                Connexion
+              </a>
+            </li>
+
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========================= CONTENU ========================= -->
+
+    <div class="container py-5">
+      {% if messages %} {% for message in messages %}
+
+      <div
+        class="alert alert-success alert-dismissible fade show shadow-sm"
+        role="alert"
+      >
+        {{ message }}
+
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+        ></button>
+      </div>
+
+      {% endfor %} {% endif %} {% block content %} {% endblock content %}
+    </div>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
