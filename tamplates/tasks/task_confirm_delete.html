@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+<a>{% block title %}Supprimer une tâche{% endblock title %}</a>
+
+{% block content %}
+
+<div class="card">
+  <div class="card-body">
+    <h3>Confirmation</h3>
+
+    <p>Voulez-vous vraiment supprimer cette tâche ?</p>
+
+    <h5 class="text-danger">{{ object.title }}</h5>
+
+    <form method="post">
+      {% csrf_token %}
+
+      <button class="btn btn-danger">Oui, supprimer</button>
+
+      <a href="{% url 'task_list' %}" class="btn btn-secondary"> Annuler </a>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

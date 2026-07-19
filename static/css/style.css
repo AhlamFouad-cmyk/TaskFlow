@@ -1,0 +1,279 @@
+/* ==========================================================
+   TaskFlow - Style principal
+   ========================================================== */
+
+/* ---------- Couleurs générales ---------- */
+
+body {
+  background-color: #f4f7fc;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  background: #1e293b !important;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #e2e8f0 !important;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #38bdf8 !important;
+}
+
+/* ---------- Dashboard ---------- */
+
+.dashboard-card {
+  border: none;
+
+  border-radius: 15px;
+
+  color: white;
+
+  transition: 0.3s;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.bg-total {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.bg-todo {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+}
+
+.bg-progress {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.bg-done {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* ---------- Recherche ---------- */
+
+.search-box {
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 20px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Cartes des tâches ---------- */
+
+.task-card {
+  border: none;
+
+  border-radius: 18px;
+
+  background: white;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+
+  transition: 0.25s;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+}
+
+.task-title {
+  font-size: 1.2rem;
+
+  font-weight: 700;
+}
+
+.task-description {
+  color: #6b7280;
+}
+
+/* ---------- Boutons ---------- */
+
+.btn {
+  border-radius: 10px;
+}
+
+.btn-sm {
+  border-radius: 8px;
+}
+
+/* ---------- Badges ---------- */
+
+.badge {
+  font-size: 0.85rem;
+
+  padding: 8px 12px;
+}
+
+/* ---------- Footer espace ---------- */
+
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+/* ==========================================
+   Icônes d'actions
+========================================== */
+
+.action-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 38px;
+
+  height: 38px;
+
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  margin-right: 8px;
+
+  transition: 0.3s;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+}
+
+.action-btn i {
+  font-size: 18px;
+}
+
+.edit {
+  color: #f59e0b;
+}
+
+.edit:hover {
+  background: #f59e0b;
+
+  color: white;
+
+  transform: scale(1.1);
+}
+
+.done {
+  color: #10b981;
+}
+
+.done:hover {
+  background: #10b981;
+
+  color: white;
+
+  transform: scale(1.1);
+}
+
+.delete {
+  color: #ef4444;
+}
+
+.delete:hover {
+  background: #ef4444;
+
+  color: white;
+
+  transform: scale(1.1);
+}
+
+.done-disabled {
+  background: #f3f4f6;
+
+  color: #bdbdbd;
+
+  cursor: default;
+
+  border: 1px solid #e5e7eb;
+}
+
+/* ==========================================================
+   Barre des statistiques
+   ========================================================== */
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.stats-header h5 {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.stats-toggle {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stats-toggle:hover {
+  color: #2563eb;
+  transform: rotate(180deg);
+}
+
+#statsSection {
+  transition: all 0.3s ease;
+}
+
+.stats-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 45px;
+  background: #e5e7eb;
+}

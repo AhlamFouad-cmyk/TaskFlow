@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+<a>{% block title %}Nouvelle tâche{% endblock title %}</a>
+
+{% block content %}
+
+<h2>Nouvelle tâche</h2>
+
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+
+  <button class="btn btn-success">Enregistrer</button>
+</form>
+
+{% endblock content %}
